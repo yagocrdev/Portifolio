@@ -105,11 +105,43 @@ function App() {
 
     return 'dark'
   })
+  const [isAboutPageOpen, setIsAboutPageOpen] = useState(false)
 
   useEffect(() => {
     document.documentElement.setAttribute('data-theme', theme)
     window.localStorage.setItem(themeStorageKey, theme)
   }, [theme])
+
+  if (isAboutPageOpen) {
+    return (
+      <div className="sheet-wrap about-page" id="topo">
+        <header className="about-page-head">
+          <div>
+            <p className="kicker">Jogador</p>
+            <h1>About Me Completo</h1>
+            <p className="subtitle">
+              Texto completo da minha jornada para leitura sem cortes.
+            </p>
+          </div>
+          <button
+            type="button"
+            className="about-page-back"
+            onClick={() => setIsAboutPageOpen(false)}
+          >
+            Voltar para o portfolio
+          </button>
+        </header>
+
+        <article className="panel about-page-content">
+          {playerStory.map((paragraph) => (
+            <p key={paragraph} className="origin">
+              {paragraph}
+            </p>
+          ))}
+        </article>
+      </div>
+    )
+  }
 
   return (
     <div className="sheet-wrap" id="topo">
@@ -159,6 +191,13 @@ function App() {
               </p>
             ))}
           </div>
+          <button
+            type="button"
+            className="about-read-more"
+            onClick={() => setIsAboutPageOpen(true)}
+          >
+            Ler texto completo
+          </button>
 
           <ul className="stat-grid" aria-label="Status principal">
             {coreStats.map((stat) => (
