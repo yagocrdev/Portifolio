@@ -106,6 +106,7 @@ function App() {
     return 'dark'
   })
   const [isAboutPageOpen, setIsAboutPageOpen] = useState(false)
+  const aboutPreview = `${playerStory[0].slice(0, 360)}...`
 
   useEffect(() => {
     document.documentElement.setAttribute('data-theme', theme)
@@ -185,11 +186,7 @@ function App() {
           <p className="role">Classe Atual</p>
           <h2>Desenvolvedor Júnior em Formação</h2>
           <div className="origin-story">
-            {playerStory.map((paragraph) => (
-              <p key={paragraph} className="origin">
-                {paragraph}
-              </p>
-            ))}
+            <p className="origin">{aboutPreview}</p>
           </div>
           <button
             type="button"
