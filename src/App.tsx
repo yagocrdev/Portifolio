@@ -2,8 +2,7 @@ import { useEffect, useState } from 'react'
 import './App.css'
 
 const coreStats = [
-  { label: 'Nível', value: '00' },
-  { label: 'Classe Atual', value: 'Desenvolvedor Júnior em Formação' },
+  { label: 'Nível', value: '0' },
   { label: 'Foco', value: 'Frontend com base em backend' },
   { label: 'Disponibilidade', value: 'Estágio / Freela' },
 ]
@@ -118,7 +117,6 @@ function App() {
       <div className="sheet-wrap about-page" id="topo">
         <header className="about-page-head">
           <div>
-            <p className="kicker">Jogador</p>
             <h1>About Me Completo</h1>
             <p className="subtitle">
               Texto completo da minha jornada para leitura sem cortes.
@@ -150,14 +148,9 @@ function App() {
         <div className="header-copy">
           <p className="kicker">Dev Character Sheet</p>
           <h1>Yago Correa Rodrigues</h1>
-          <p className="subtitle">
-            Portfólio em formato RPG com progresso técnico, habilidades e
-            objetivos de evolução como desenvolvedor.
-          </p>
         </div>
         <div className="header-controls">
           <nav className="sheet-nav" aria-label="Navegação principal">
-            <a href="#jogador">Jogador</a>
             <a href="#skills">Habilidades</a>
             <a href="#atributos">Atributos</a>
             <a href="#objetivos">Objetivos</a>
@@ -177,13 +170,11 @@ function App() {
       <main className="sheet-grid">
         <aside className="panel panel-profile" id="jogador">
           <div className="panel-title-row">
-            <p className="panel-id">Jogador</p>
             <h3>About Me</h3>
           </div>
           <div className="avatar-block" aria-hidden="true">
             <span>YC</span>
           </div>
-          <p className="role">Classe Atual</p>
           <h2>Desenvolvedor Júnior em Formação</h2>
           <div className="origin-story">
             <p className="origin">{aboutPreview}</p>
@@ -206,7 +197,7 @@ function App() {
           </ul>
 
           <div className="xp-block" aria-label="Barras de experiência técnica">
-            <p className="xp-title">Barras de Experiência</p>
+            <p className="xp-title">Lingaguens</p>
             <ul className="xp-list">
               {experienceBars.map((experience) => (
                 <li key={experience.name}>
