@@ -90,6 +90,10 @@ const inventory = [
 type Theme = 'dark' | 'light'
 
 const themeStorageKey = 'portfolio-theme'
+const profileLinks = {
+  vercel: 'https://portifolio.vercel.app',
+  githubRepo: 'https://github.com/yagocrdev/Portifolio',
+}
 
 function App() {
   const [theme, setTheme] = useState<Theme>(() => {
@@ -307,11 +311,11 @@ function App() {
             <a className="btn btn-primary" href="mailto:seuemail@dominio.com">
               Convocar por E-mail
             </a>
-            <a href="https://www.linkedin.com" target="_blank" rel="noreferrer">
-              LinkedIn
+            <a href={profileLinks.vercel} target="_blank" rel="noreferrer">
+              Vercel
             </a>
-            <a href="https://github.com" target="_blank" rel="noreferrer">
-              GitHub
+            <a href={profileLinks.githubRepo} target="_blank" rel="noreferrer">
+              GitHub Repo
             </a>
           </div>
         </section>
